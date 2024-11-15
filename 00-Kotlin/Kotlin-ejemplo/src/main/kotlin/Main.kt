@@ -1,5 +1,6 @@
 package org.example
 import java.util.*
+import kotlin.collections.ArrayList
 
 fun main(args: Array<String>){
 
@@ -56,6 +57,21 @@ fun main(args: Array<String>){
     // usando el parametro sueldo en 2da posición
     // usando el parametro tasa en 3era posición
     // gracias a los parámetros nombrados
+
+    //CLASES USO:
+
+    val sumaA = Suma(1,1)
+    val sumaB = Suma(null,1)
+    val sumaC = Suma(1,null)
+    val sumaD = Suma(null,null)
+    sumaA.sumar()
+    sumaB.sumar()
+    sumaC.sumar()
+    sumaD.sumar()
+    println(Suma.pi)
+    println(Suma.elevarAlCuadrado(2))
+    println(Suma.historialSumas)
+
 }
 
 fun imprimirNombre(nombre: String): Unit{
@@ -117,3 +133,67 @@ abstract class Numeros( //Constructor primario
         println("Inicializando")
     }
 }
+
+class Suma(
+    unoParametro: Int, //Parametro
+    dosParametro: Int, //Parametros
+): Numeros(//Clase papa, Numero(Extendido)
+    unoParametro,
+    dosParametro
+){
+    public val soyPublicoExplicito: String = "Publicas"
+    val soyPublicoImpicite: String = "Publico Implicito"
+    init { //bloque constructor primario
+        this.numeroUno
+        this.numeroDos
+        numeroUno // this. OPCIONAL [propiedades, metodos]
+        numeroDos // this. OPCIONAL [propiedades, metodos]
+        this.soyPublicoImpicite
+        soyPublicoExplicito
+    }
+    constructor(//Constructor secundario
+        uno: Int?, //Entero nullable
+        dos: Int,
+    ):this(
+        if(uno ==null) 0 else uno,
+        dos
+    ){
+        //Bloque de codigo de constructor secundario
+    }
+    constructor(//Constructor secundario
+        uno: Int,
+        dos: Int?,//Entero nullable
+    ):this(
+        uno,
+        if(dos ==null) 0 else dos
+    )
+    constructor(//Constructor secundario
+        uno: Int?,
+        dos: Int?,//Entero nullable
+    ):this(
+        if(uno == null) 0 else uno,
+        if(dos == null) 0 else dos
+    )
+    fun sumar():Int{
+        val total = numeroUno + numeroDos
+        agregarHistorial(total)
+        return total
+    }
+
+    companion object{ //Comparte entre todas las instancias, similar al STATIC
+        //funciones, variables
+        //NombreClase.metodo, NombreClase.funcion =>
+        //Suma.pi
+        val pi = 3.14
+        //Suma.elevarAlCuadrado
+        fun elevarAlCuadrado(num:Int):Int{return num*num}
+        val historialSumas = arrayListOf<Int>()
+        fun agregarHistorial(valorTotalSuma:Int){
+            historialSumas.add(valorTotalSuma)
+        }
+
+    }
+
+}
+
+
