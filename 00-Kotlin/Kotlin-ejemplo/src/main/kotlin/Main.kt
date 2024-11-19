@@ -71,7 +71,26 @@ fun main(args: Array<String>){
     println(Suma.pi)
     println(Suma.elevarAlCuadrado(2))
     println(Suma.historialSumas)
+    //Arreglos
+    //Estatico
+    val arregloEstatico: Array<Int> = arrayOf<Int>(1,2,3)
+    println(arregloEstatico);
+    //Dinamicos
+    val arregloDinamico: ArrayList<Int> = arrayListOf<Int>(
+        1,2,3,4,5,6,7,8,9,10
+    )
+    println(arregloDinamico)
+    arregloDinamico.add(11)
+    arregloDinamico.add(12)
+    println(arregloDinamico)
 
+
+    //FOR EACH = > Unit
+    //Iterar un arreglo
+    val respuestaForEach: Unit = arregloDinamico
+        .forEach { valorActual: Int -> // - > =>
+            println("Valor actual: ${valorActual}");
+        }
 }
 
 fun imprimirNombre(nombre: String): Unit{
@@ -194,6 +213,9 @@ class Suma(
 
     }
 
+
 }
+
+
 
 
