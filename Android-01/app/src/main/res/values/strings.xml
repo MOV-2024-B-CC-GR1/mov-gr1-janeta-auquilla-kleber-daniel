@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">ccgr12024b_kdja</string>
-    <string name="saludo" translatable="false">hello friend</string>
+    <string name="saludo">hello friends</string>
+    <color name="saludo_color">#947749</color>
 </resources>

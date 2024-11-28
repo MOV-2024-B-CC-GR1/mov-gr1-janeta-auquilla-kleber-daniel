@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.example.ccgr12024b_kdja"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.ccgr12024b_kdja"
