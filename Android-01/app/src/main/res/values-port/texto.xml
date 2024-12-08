@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="saludo">PORT ES -> CONDICION 4</string>
+    <string name="saludo">Hola Amigos</string>
 </resources>

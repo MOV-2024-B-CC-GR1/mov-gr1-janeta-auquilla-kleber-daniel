@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="lv_list_view">
+        <item name="android:layout_width">349dp</item>
+        <item name="android:layout_height">430dp</item>
+    </style>
+</resources>
