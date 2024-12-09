@@ -1,0 +1,1 @@
+manzano|300|frutal|false|hoja|1.5|verde|false|hojas largas y estrechas|fruto|200.0|rojo|false|dulce y conocido como manzana
