@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_green_light"
+    android:padding="16dp"
+    tools:context=".GOrganosActivity">
+
+
+    <TextView
+        android:id="@+id/serVivoTextView"
+        android:layout_width="400dp"
+        android:layout_height="37dp"
+        android:layout_marginBottom="24dp"
+        android:background="@android:color/system_neutral1_700"
+        android:text=""
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/tvOrgano"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:visibility="visible" />
+
+    <ListView
+        android:id="@+id/listaOrganos"
+        android:layout_width="374dp"
+        android:layout_height="491dp"
+        android:background="@android:color/darker_gray"
+        android:divider="@color/material_dynamic_neutral50"
+        android:dividerHeight="1dp"
+        android:padding="12dp"
+        app:layout_constraintBottom_toTopOf="@id/btnAgregarOrgano"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvOrgano" />
+
+    <Button
+        android:id="@+id/btnAgregarOrgano"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@android:color/system_neutral1_700"
+        android:drawableLeft="@android:drawable/ic_input_add"
+        android:gravity="center"
+        android:text="Agregar Órgano"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:iconSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/listaOrganos"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/tvOrgano"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="Lista de Órganos"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/serVivoTextView"
+        app:layout_constraintStart_toStartOf="@+id/serVivoTextView"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

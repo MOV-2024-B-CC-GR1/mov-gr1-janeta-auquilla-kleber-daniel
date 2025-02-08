@@ -8,23 +8,24 @@
     android:layout_height="match_parent"
     android:background="@android:color/holo_green_light"
     android:padding="16dp"
-    tools:context=".OrganoEditorActivity">
+    tools:context=".SerVivoEditorActivity">
 
-    <!-- Título -->
+    <!-- Título centrado con mayor tamaño -->
     <TextView
-        android:id="@+id/tvSerVivoInfo"
+        android:id="@+id/tvSerVivoCrud"
         android:layout_width="400dp"
         android:layout_height="37dp"
         android:layout_marginBottom="24dp"
-        android:background="@android:color/system_neutral1_700"
-        android:text="Órgano"
+        android:background="@color/white"
+        android:backgroundTint="@android:color/system_neutral1_700"
+        android:text="Planta"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@color/white"
         android:textSize="28sp"
         android:textStyle="bold"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/etNombreOrgano"
+        app:layout_constraintBottom_toTopOf="@+id/etNombre"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,35 +33,69 @@
         app:layout_constraintVertical_bias="0.0"
         tools:visibility="visible" />
 
-    <!-- EditText -->
+    <!-- EditText para Nombre -->
 
     <EditText
-        android:id="@+id/etNombreOrgano"
-        android:layout_width="281dp"
+        android:id="@+id/etNombre"
+        android:layout_width="290dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="24dp"
         android:backgroundTint="@android:color/white"
         android:drawableLeft="@android:drawable/presence_invisible"
         android:drawablePadding="4dp"
-        android:hint="Nombre del Órgano"
+        android:hint="Nombre"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
         android:textColor="@color/white"
         android:textColorLink="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/etFuncionOrgano"
+        app:layout_constraintBottom_toTopOf="@+id/etTipo"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/etFechaNacimiento"
+        android:layout_width="290dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="36dp"
+        android:backgroundTint="@android:color/white"
+        android:drawableLeft="@android:drawable/presence_invisible"
+        android:drawablePadding="4dp"
+        android:hint="Tipo"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textColor="@color/white"
+        android:textColorLink="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/cbEsVertebrado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <CheckBox
+        android:id="@+id/cbEsVertebrado"
+        android:layout_width="204dp"
+        android:layout_height="28dp"
+        android:layout_marginBottom="36dp"
+        android:text="¿Es perenne?"
+        android:textColor="@color/white"
+        android:textColorLink="@color/design_default_color_error"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnGuardarSerVivo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btnGuardarOrgano"
+        android:id="@+id/btnGuardarSerVivo"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="296dp"
+        android:layout_marginBottom="212dp"
         android:backgroundTint="@android:color/system_neutral1_700"
         android:text="Guardar"
         android:textColor="@android:color/white"
         android:textSize="18sp"
-        android:textStyle="bold"
+        android:visibility="visible"
         app:icon="@android:drawable/ic_menu_save"
         app:iconPadding="0dp"
         app:iconSize="30dp"
@@ -69,60 +104,32 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible" />
 
     <EditText
-        android:id="@+id/etCantidadCelulas"
-        android:layout_width="281dp"
+        android:id="@+id/etTipo"
+        android:layout_width="290dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="36dp"
         android:backgroundTint="@android:color/white"
         android:drawableLeft="@android:drawable/presence_invisible"
         android:drawablePadding="4dp"
-        android:hint="Color"
+        android:hint="Altura"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
         android:textColor="@color/white"
         android:textColorLink="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/etEficiencia"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/etFechaNacimiento"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/etFuncionOrgano"
-        android:layout_width="281dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="4dp"
-        android:backgroundTint="@android:color/white"
-        android:drawableLeft="@android:drawable/presence_invisible"
-        android:drawablePadding="4dp"
-        android:hint="Peso"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:textColor="@color/white"
-        android:textColorLink="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/etCantidadCelulas"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    <!-- EditText para Fecha de Nacimiento -->
 
-    <EditText
-        android:id="@+id/etEficiencia"
-        android:layout_width="281dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="32dp"
-        android:backgroundTint="@android:color/white"
-        android:drawableLeft="@android:drawable/presence_invisible"
-        android:drawablePadding="4dp"
-        android:hint="Descripción"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:textColor="@color/white"
-        android:textColorLink="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/btnGuardarOrgano"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    <!-- CheckBox para Es Vertebrado -->
 
     <!-- Botón -->
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
